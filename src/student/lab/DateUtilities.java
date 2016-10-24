@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class DateUtilities {
     private String date;
+    private LocalDate ld;
     //At least four methods: get current date, get date differences, validate these methods,
     //Test, name things well, document, and distribute.
     
@@ -24,6 +25,19 @@ public class DateUtilities {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a");
         LocalDateTime currentDate = LocalDateTime.now();
         return currentDate.format(formatter);
+    }
+    
+     /**
+     * This method allows the date parameter to be converted to a string. 
+     * 
+     * @param ld of type LocalDate
+     * @return string representing the date
+     */
+    
+    public final String convertDateToString(LocalDate ld) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a");
+        this.ld = ld;
+        return ld.format(formatter);
     }
     
     /**
